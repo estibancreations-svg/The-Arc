@@ -1,0 +1,17 @@
+workstream_id,entity_class,seed_count,stage2_primary_output,first_gate,target_dependency,priority,status
+RB-01,Structural Architecture,40,dimensioned structural BOM and load-path map,R1,ARC-01 geometry lock,1,READY_TO_START
+RB-02,Minerals / Elements / Materials,50,material-to-element BOM and refining/manufacturing routes,R3,RB-01 + source strategy,1,READY_TO_START
+RB-03,Mechanical Systems,30,component/subsystem decomposition and maintenance model,R2,RB-01,1,READY_TO_START
+RB-04,Power & Electrical,25,average/peak generation-storage-distribution ledger,R4,primary power architecture,1,READY_TO_START
+RB-05,Atmosphere & Climate,25,pressure-zone gas mass and climate-control ledger,R4,population + zone volumes,1,READY_TO_START
+RB-06,Water / Aquatic / Reclamation,35,12-ledger water mass/flow/reclamation model,R4,geometry + population,1,READY_TO_START
+RB-07,Plants / Vegetable / Landscape,53,agriculture/ecology area-yield-water-light model,R4,RB-05 + RB-06,2,READY_TO_START
+RB-08,Microbes / Fungi / Primary Producers,35,waste/soil/water/fermentation biological process graph,R4,RB-06 + RB-07,2,READY_TO_START
+RB-09,Terrestrial Animals / Invertebrates,35,population/feed/welfare/pollination/decomposer model,R4,RB-07 + RB-08,2,READY_TO_START
+RB-10,Aquatic Animals,43,managed trophic/population/oxygenation/veterinary model,R4,RB-06 + RB-08,2,READY_TO_START
+RB-11,Habitat / Civic / Built Environment,40,population-services-floor-area/transport demand model,R2,design population,2,READY_TO_START
+RB-12,Digital / AI / Control,25,control/data dependency and failover architecture,R4,all major subsystem IDs,2,READY_TO_START
+RB-13,Vehicles / Craft / Robotics,25,transport/maintenance/EVA/submersible fleet model,R2,mission + zone demand,3,READY_TO_START
+RB-14,Safety / Emergency / Recovery,30,scenario/reserve/recovery coverage model,R6,all critical workstreams,3,READY_TO_START
+RB-15,Integrated Construction,0,assembly sequence labor facilities tooling and staging,R7,RB-01 through RB-14,4,BLOCKED_BY_UPSTREAM
+RB-16,Integrated Simulation,0,nominal overload branch-isolation core-isolation failure simulation,R8,RB-15 + mission architecture,5,BLOCKED_BY_UPSTREAM
