@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://estibancreations.example/schemas/the-arc/reality-build-entity-v2.schema.json",
+  "title": "The Arc Reality Build Entity v2",
+  "description": "Stage-2 quantified build record for any structural, mechanical, biological, material, digital, vehicle, civic or emergency entity in The Arc Digital Twin.",
+  "type": "object",
+  "required": ["entity_id","canonical_name","entity_class","vessel_class","zone_ids","reality_gate","approval_status"],
+  "properties": {
+    "entity_id": {"type":"string"},
+    "parent_entity_id": {"type":["string","null"]},
+    "canonical_name": {"type":"string"},
+    "aliases": {"type":"array","items":{"type":"string"}},
+    "entity_class": {"type":"string","enum":[
+      "Structural Architecture","Mechanical Systems","Power & Electrical","Atmosphere & Climate",
+      "Water / Aquatic / Reclamation","Habitat / Civic / Built Environment","Digital / AI / Control",
+      "Minerals / Elements / Materials","Plants / Vegetable / Landscape",
+      "Terrestrial Animals / Invertebrates","Aquatic Animals",
+      "Microbes / Fungi / Primary Producers","Vehicles / Craft / Robotics",
+      "Safety / Emergency / Recovery"
+    ]},
+    "subtype": {"type":["string","null"]},
+    "vessel_class": {"type":"string"},
+    "zone_ids": {"type":"array","items":{"type":"string"}},
+    "quantity": {"type":["number","null"]},
+    "unit": {"type":["string","null"]},
+    "dimensions": {
+      "type":"object",
+      "additionalProperties":{"type":["number","string","null"]}
+    },
+    "unit_mass_kg": {"type":["number","null"]},
+    "installed_mass_kg": {"type":["number","null"]},
+    "volume_m3": {"type":["number","null"]},
+    "material_composition": {
+      "type":"array",
+      "items":{"type":"object","required":["material_id","mass_fraction"],"properties":{
+        "material_id":{"type":"string"},
+        "mass_fraction":{"type":"number","minimum":0,"maximum":1}
+      }}
+    },
+    "source_material_ids": {"type":"array","items":{"type":"string"}},
+    "manufacturing_process_ids": {"type":"array","items":{"type":"string"}},
+    "component_input_ids": {"type":"array","items":{"type":"string"}},
+    "dependency_ids": {"type":"array","items":{"type":"string"}},
+    "downstream_dependent_ids": {"type":"array","items":{"type":"string"}},
+    "assembly_stage": {"type":["string","null"]},
+    "installation_sequence": {"type":["integer","null"]},
+    "labor_hours": {"type":["number","null"]},
+    "automation_hours": {"type":["number","null"]},
+    "facility_requirements": {"type":"array","items":{"type":"string"}},
+    "operating_power_kw": {"type":["number","null"]},
+    "peak_power_kw": {"type":["number","null"]},
+    "waste_heat_kw": {"type":["number","null"]},
+    "water_inputs": {"type":"object","additionalProperties":{"type":["number","null"]}},
+    "water_outputs": {"type":"object","additionalProperties":{"type":["number","null"]}},
+    "atmosphere_inputs": {"type":"object","additionalProperties":{"type":["number","null"]}},
+    "atmosphere_outputs": {"type":"object","additionalProperties":{"type":["number","null"]}},
+    "consumables": {"type":"array","items":{"type":"string"}},
+    "biological_profile": {
+      "type":["object","null"],
+      "properties":{
+        "taxonomy":{"type":["string","null"]},
+        "founding_population":{"type":["number","null"]},
+        "genetic_diversity_target":{"type":["string","number","null"]},
+        "environmental_envelope":{"type":"object"},
+        "diet_nutrients":{"type":"array","items":{"type":"string"}},
+        "trophic_level":{"type":["string","null"]},
+        "reproduction_propagation":{"type":["string","null"]},
+        "disease_pest_risks":{"type":"array","items":{"type":"string"}},
+        "quarantine_protocol":{"type":["string","null"]},
+        "minimum_viable_reserve":{"type":["number","string","null"]},
+        "ecosystem_interactions":{"type":"array","items":{"type":"string"}}
+      }
+    },
+    "inspection_interval_hours": {"type":["number","null"]},
+    "mtbf_hours": {"type":["number","null"]},
+    "service_life_hours": {"type":["number","null"]},
+    "spare_ratio": {"type":["number","null"]},
+    "replacement_rate_per_year": {"type":["number","null"]},
+    "recycling_fraction": {"type":["number","null"],"minimum":0,"maximum":1},
+    "reserve_stock": {"type":["number","string","null"]},
+    "failure_modes": {"type":"array","items":{"type":"string"}},
+    "emergency_behavior": {"type":["string","null"]},
+    "visual_asset_ids": {"type":"array","items":{"type":"string"}},
+    "story_scene_ids": {"type":"array","items":{"type":"string"}},
+    "evidence_sources": {"type":"array","items":{"type":"string"}},
+    "confidence": {"type":"string","enum":["unknown","low","medium","high","verified"]},
+    "reality_gate": {"type":"string","enum":["R0","R1","R2","R3","R4","R5","R6","R7","R8"]},
+    "approval_status": {"type":"string","enum":["seeded","in_review","approved","canonical_locked","superseded"]},
+    "change_history": {"type":"array","items":{"type":"object"}}
+  }
+}
