@@ -14,6 +14,7 @@
 | `REALITY-BUILD-DECOMPOSITION-v2.md` | Engineering model | Stage-2 build decomposition / bill-of-systems framework | [This repository](REALITY-BUILD-DECOMPOSITION-v2.md) |
 | `REALITY-BUILD-ENTITY-SCHEMA-v2.json` | Machine-readable schema | Quantified per-entity build/operations/maintenance/recovery record | [This repository](REALITY-BUILD-ENTITY-SCHEMA-v2.json) |
 | `REALITY-BUILD-EXECUTION-QUEUE-v2.csv` | Work queue | 14 entity-class workstreams + integrated construction/simulation gates | [This repository](REALITY-BUILD-EXECUTION-QUEUE-v2.csv) |
+| `REALITY-BUILD-SEED-REGISTRY-v2.jsonl` | Stage-2 seed registry | All 491 Stage-1 entities converted into machine-readable R0 build records | [This repository](REALITY-BUILD-SEED-REGISTRY-v2.jsonl) |
 
 Full Drive folder: [06_Digital_Twin](https://drive.google.com/drive/folders/1zVji_S-c5_-2ujrOdalua3twMxj4r0sT)
 
