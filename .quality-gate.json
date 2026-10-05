@@ -1,0 +1,14 @@
+{
+  "repository": "estibancreations-svg/The-Arc",
+  "scope": "documentation/catalog integrity; live production remains unverified",
+  "required_files": [
+    "README.md",
+    "06-digital-twin/REALITY-BUILD-ENTITY-SCHEMA-v2.json"
+  ],
+  "jsonc_files": [
+    "tsconfig.json",
+    "tsconfig.app.json",
+    "tsconfig.node.json",
+    "deno.json"
+  ]
+}
